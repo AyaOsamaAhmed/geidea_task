@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">geidea_task</string>
+    <string name="Home_fragment">Home Fragment</string>
+    <string name="details_user_fragment">Details User Fragment</string>
+    <string name="user_id">User Id :</string>
+    <string name="user_first">User First :</string>
+    <string name="user_last">User Last :</string>
+    <string name="details">Details</string>
 </resources>

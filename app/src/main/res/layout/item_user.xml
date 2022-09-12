@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="model"
@@ -9,7 +9,94 @@
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/draw_border_gray_medium_white"
+    >
 
+    <TextView
+        android:id="@+id/tx_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_id"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="123"
+        android:text="@{model.id.toString()}"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/purple_500"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tx_user_id"
+        />
+
+    <TextView
+        android:id="@+id/tx_user_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_first"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tx_user_id"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/user_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/full_names"
+        android:text="@{model.first_name}"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/purple_500"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@id/tx_user_first"
+        app:layout_constraintStart_toEndOf="@id/tx_user_first"
+        />
+
+    <TextView
+        android:id="@+id/tx_user_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_last"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tx_user_first"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/user_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/full_names"
+        android:text="@{model.last_name}"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/purple_500"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@id/tx_user_last"
+        app:layout_constraintStart_toEndOf="@id/tx_user_last"
+        />
+
+    <Button
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

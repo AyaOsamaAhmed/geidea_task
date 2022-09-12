@@ -8,7 +8,7 @@ import com.aya.geidea_task.domain.services.MainServicesImpl
 object MainRepo {
 
 
-    suspend fun activities(): MainResponse?  {
+    suspend fun getAllUsers(): MainResponse?  {
         return try {
             val response =
                 MainServicesImpl.getUsers()

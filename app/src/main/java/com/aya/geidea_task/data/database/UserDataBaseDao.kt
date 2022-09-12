@@ -8,7 +8,7 @@ interface UserDataBaseDao  {
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-     suspend fun insertCart(item: User)
+     suspend fun insertUser(item: User)
 
 /*
     @Query("SELECT * FROM product WHERE cart_id = :cartId")

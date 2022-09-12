@@ -27,7 +27,9 @@ class UserAdapter (private val models : List<User>,
         val model = models[position]
           holder.bind(model)
 
-
+        holder.itemRowBinding.details.setOnClickListener {
+            onClick.onClickDetails(model.id!!)
+        }
     }
     override fun getItemCount(): Int {
         return if (models.isNotEmpty()) models.size else 0
