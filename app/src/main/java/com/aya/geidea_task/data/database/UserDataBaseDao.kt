@@ -10,9 +10,9 @@ interface UserDataBaseDao  {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
      suspend fun insertUser(item: User)
 
-/*
-    @Query("SELECT * FROM product WHERE cart_id = :cartId")
-    suspend fun getProductsInCart(cartId : Int): List<ProductItem>
-*/
+
+    @Query("SELECT * FROM user ")
+    suspend fun getUsers(): List<User>
+
 
 }

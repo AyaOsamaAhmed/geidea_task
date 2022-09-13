@@ -6,4 +6,6 @@
     <string name="user_first">User First :</string>
     <string name="user_last">User Last :</string>
     <string name="details">Details</string>
+    <string name="user_email">User Email :</string>
+    <string name="company">Company :</string>
 </resources>

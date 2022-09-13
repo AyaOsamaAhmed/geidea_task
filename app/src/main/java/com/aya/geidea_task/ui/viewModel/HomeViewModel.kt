@@ -15,13 +15,15 @@ class HomeViewModel : ViewModel() {
 
 
     var requestUserLiveData = MutableLiveData<Any>()
+    var requestDetailsUserLiveData = MutableLiveData<Any>()
+
+
     var requestUserInDatabaseLiveData = MutableLiveData<Any>()
     var userData : ArrayList<User> = arrayListOf()
 
 
     init {
 
-        getAllUsers()
 
     }
 
@@ -31,9 +33,22 @@ class HomeViewModel : ViewModel() {
         }
     }
 
+    fun getDetailsUser(id:Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            requestDetailsUserLiveData.postValue(MainRepo.getDetailsUser(id))
+        }
+    }
+
+
     fun setUsersInDatabase(user : User){
         viewModelScope.launch(Dispatchers.IO) {
-            requestUserInDatabaseLiveData.postValue(App.dbApp.userDataBase.insertUser(user))
+             App.databaseApp.userDataBase.insertUser(user)
+        }
+    }
+
+    fun getUsersInDatabase(){
+        viewModelScope.launch(Dispatchers.IO) {
+            requestUserInDatabaseLiveData.postValue(App.databaseApp.userDataBase.getUsers())
         }
     }
 
