@@ -59,13 +59,14 @@ class UserDetailsFragment : Fragment() {
         })
 
         //countDown
-        Handler(Looper.getMainLooper()).postDelayed({
+      /*  Handler(Looper.getMainLooper()).postDelayed({
             // Create an Intent that will start.
            // navController.navigate(R.id.action_UserDetailsFragment_to_HomeFragment)
             binding.countDown.text = mBoundService?.getTimestamp()
 
         }, 1000)
 
+       */
 
         //https://stackoverflow.com/questions/62971825/how-to-start-a-service-and-then-bind-to-it-from-a-fragment
         //https://stackoverflow.com/questions/16382186/implementing-a-count-down-timer-using-service-in-the-background
@@ -101,6 +102,8 @@ class UserDetailsFragment : Fragment() {
             val myBinder = service as MyBinder
             mBoundService = myBinder.service
             mServiceBound = true
+            startTimer(5000)
+            binding.countDown.text = mBoundService?.getTimestamp()
         }
     }
 
